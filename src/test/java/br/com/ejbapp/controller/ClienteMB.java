@@ -2,7 +2,6 @@ package br.com.ejbapp.controller;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.event.ActionEvent;
@@ -23,9 +22,9 @@ public class ClienteMB {
 
 	private List<Cliente> clientes;
 	
-    @PostConstruct
-	void  init(){
-		this.clientes = clienteDAO.findAll();
+   
+	public void  init(){
+		
 	}
     
 	public ClienteMB() {}
@@ -59,7 +58,7 @@ public class ClienteMB {
 	}
 	
 	public List<Cliente> findAll() {
-		return clientes;
+		return this.clientes = clienteDAO.findAll();	
 	}
 
 }

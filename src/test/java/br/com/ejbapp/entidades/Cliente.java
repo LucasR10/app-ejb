@@ -8,9 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
-
 
 @Entity
 @Table(name="tb_cliente")
@@ -18,13 +15,13 @@ public class Cliente implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Getter
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	@Getter @Setter
+	
 	private String name;
-	@Getter @Setter
+	
 	private Double preco;
 	
 	public Cliente() {

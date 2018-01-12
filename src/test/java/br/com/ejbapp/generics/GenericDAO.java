@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -38,6 +39,7 @@ public class GenericDAO <T, ID extends Serializable> implements CrudDAO<T, Seria
 	}
 
 	@SuppressWarnings("unchecked")
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)	
 	public List<T> findAll() {
 		return em.createQuery(" SELECT entity FROM "+ persistedClass.getSimpleName() +" entity").getResultList();
 	}
