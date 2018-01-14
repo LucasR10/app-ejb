@@ -29,7 +29,7 @@
 			<p:message for="preco" />
 			
 			<h:outputLabel/>
-			<p:commandButton value="Cadastrar" 
+			<p:commandButton value="Cadastrar" action="#{clienteMB.save()}"
 				update="@form" />
 		</p:panelGrid>
 		
@@ -61,6 +61,10 @@
                         <h:outputText value="#{cliente.preco}" />
                     </p:column>
                         
+                    <p:column>
+                        <f:facet name="header">
+                        <h:outputText value="Excluir" /></f:facet>
+                    </p:column>
                     
                 </p:dataTable>
             </fieldset>
